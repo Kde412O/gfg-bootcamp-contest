@@ -1,0 +1,55 @@
+
+
+class Solution{
+    public:
+    // A1[] : the input array-1
+    // N : size of the array A1[]
+    // A2[] : the input array-2
+    // M : size of the array A2[]
+    
+    //Function to sort an array according to the other array.
+    vector<int> sortA1ByA2(vector<int> A1, int N, vector<int> A2, int M) 
+    {
+       vector<int> ans;
+
+        map <int,int> map;
+
+        for(int i=0; i<N; i++){
+
+            map[A1[i]]++;
+
+        }
+
+        for(int i=0; i<M ; i++){
+
+            int m= map[A2[i]];
+
+            for(int j=0; j<m ; j++){
+
+                ans.push_back(A2[i]);
+
+                map[A2[i]]--;
+
+            }
+
+        }
+
+        
+
+        for(auto x:map){
+
+            int c= x.second;
+
+            for(int k=0; k<c; k++){
+
+                ans.push_back(x.first);
+
+            }
+
+        }
+
+        
+
+        return ans;
+    } 
+};
