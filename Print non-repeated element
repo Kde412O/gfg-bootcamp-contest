@@ -1,0 +1,23 @@
+ 
+    // arr[]: input array
+    // n: size of array
+    //Function to return non-repeated elements in the array.
+    vector<int> printNonRepeated(int arr[],int n)
+    {
+      map<int,int>m;  
+        vector<int>v; 
+        for(int i=0;i<n;i++) 
+        { 
+            m[arr[i]]++; 
+        } 
+        for(int j=0;j<n;j++) 
+        { 
+            if(m[arr[j]]==1)
+            v.push_back(arr[j]); 
+        }  
+        //for(int i=1;i<=v.size();i++) 
+        //cout<<v[i];
+       // reverse(v.begin(),v.end());
+        return v;
+    }
+};
