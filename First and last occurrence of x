@@ -1,0 +1,43 @@
+
+    vector<int> ans;
+
+        for(int i=0;i<n;i++)
+
+        {
+
+            if(v[i]==x)
+
+            {
+
+                ans.push_back(i);
+
+                break;
+
+            }
+
+        }
+
+        for(int i=n-1;i>=0;i--)
+
+        {
+
+            if(v[i]==x)
+
+            {
+
+                ans.push_back(i);
+
+                break;
+
+            }
+
+        }
+
+        if(ans.size()!=0)
+
+            return ans;
+
+        return {-1,-1};
+
+    
+    
