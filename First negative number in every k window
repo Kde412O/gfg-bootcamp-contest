@@ -1,0 +1,57 @@
+long long int i=0,j=0;
+
+    vector<long long int>ans;
+
+    queue<long long int>q;
+
+    while(j<N)
+
+    {
+
+        if(A[j]<0)
+
+        {
+
+            q.push(A[j]);
+
+        }
+
+            if(j-i+1==K)
+
+            {
+
+                if(!q.empty())
+
+                {
+
+                    ans.push_back(q.front());
+
+                    if(A[i]==q.front())
+
+                      q.pop();
+
+                     
+
+                      
+
+                }
+
+                else
+
+                {
+
+                    ans.push_back(0);
+
+                }
+
+                 i++;
+
+                
+
+            }
+
+            j++;
+
+        
+
+    }return ans;
