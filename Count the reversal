@@ -1,0 +1,43 @@
+
+
+
+int countRev (string s)
+{
+    if(s.length()%2!=0)
+    {
+        return -1;
+    }
+    stack<char> q;
+    for(int i=0;i<s.length();i++)
+    {
+        if(q.empty())
+        {
+            q.push(s[i]);
+        }
+        else if(q.top()=='{' && s[i]=='}')
+        {
+            q.pop();
+        }
+        else
+        {
+            q.push(s[i]);
+        }
+    }
+    int ans=0;
+    while(!q.empty())
+    {
+        char a=q.top();
+        q.pop();
+        char b=q.top();
+        q.pop();
+        if(a!=b)
+        {
+            ans+=2;
+        }
+        else
+        {
+            ans++;
+        }
+    }
+    return ans;
+}
