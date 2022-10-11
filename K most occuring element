@@ -1,0 +1,23 @@
+
+class Solution
+{
+    public:
+    //Function to return the sum of frequencies of k numbers
+    //with most occurrences in an array.
+    int kMostFrequent(int arr[], int n, int k) 
+    {  
+        int sum=0;
+    	vector<int>v; 
+    	map<int,int>m; 
+    	for(int i=0;i<n;i++) 
+    	m[arr[i]]++; 
+    	for(auto i:m) 
+    	{ 
+    	    v.push_back(i.second); 
+    	} 
+    	sort(v.begin(),v.end(),greater<int>()); 
+    	for(int i=0;i<k;i++) 
+    	sum+=v[i]; 
+    	return sum;
+    } 
+};
